@@ -1,15 +1,22 @@
-var i = 10;
-var c = '1';
-var d = '2';
+var obj = {
+  className:'asd sdsa'
+};
 
-d = prompt('Q?','fack');
+function addClass(obj, cls) {
+  var keys;
+  if(obj.className){
+   keys = obj.className.split(' ');
+  }else{
+   keys = [];
+  }
+  //[open,menu,(),()]
+  if (-1 === keys.indexOf(cls)) {
+    keys.splice(keys.length, 0, cls);
+    obj.className = keys.join(' ');
+  } else {
+    return false;
+  }
+}
+console.log(addClass(obj, 'ru22ny'));
 
-c = confirm();
-console.log(c);
-console.log(d);
-
-var str = "Hello GIT";
-
-var str2 = "Vlad";
-
-alert(str2 + str);
+console.log(obj.className);
